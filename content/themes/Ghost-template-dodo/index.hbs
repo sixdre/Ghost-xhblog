@@ -1,0 +1,59 @@
+{{!< default}}
+{{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
+
+{{! The main content area on the homepage }}
+
+<style type="text/css">
+
+    .label-primary {
+        filter:alpha(opacity=70);
+        -moz-opacity:0.7;
+        opacity:0.7;
+    }
+
+    @media (max-width:500px) {
+
+        .post {
+            margin-left: 0px;
+            margin-right: 0px;
+        }
+
+    }
+
+</style>
+
+{{! 引用博客封面}}
+<!--{{>blog_cover}}-->
+
+<main id="content" class="content" role="main">
+
+    {{! The tag below includes the post loop - partials/loop.hbs }}
+
+    <div class="row ">
+
+        <div class="col-md-4">
+
+            {{! 博客信息 }}
+            {{>blog_info}}
+
+            {{! 标签云 }}
+            {{tag_cloud}}
+
+            {{! 作品 }}
+            {{>product}}
+
+            {{! 友情链接 }}
+            {{>flink}}
+
+            {{!阿里云广告}}
+            <!--{{>adv_1}}-->
+
+        </div>
+
+        <div class="col-md-8">
+            {{> "loop"}}
+        </div>
+
+    </div>
+
+</main>

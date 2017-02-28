@@ -1,0 +1,70 @@
+<!--<div class="nav">-->
+    <!--<h3 class="nav-title">菜单</h3>-->
+    <!--<a href="#" class="nav-close">-->
+        <!--<span class="hidden">关闭</span>-->
+    <!--</a>-->
+    <!--<ul>-->
+        <!--{{#foreach navigation}}-->
+            <!--<li class="nav-{{slug}}{{#if current}} nav-current{{/if}}" role="presentation"><a href="{{url absolute="true"}}">{{label}}</a></li>-->
+        <!--{{/foreach}}-->
+    <!--</ul>-->
+    <!--<a class="subscribe-button icon-feed" href="{{@blog.url}}/rss/">订阅</a>-->
+<!--</div>-->
+<!--<span class="nav-cover"></span>-->
+
+<style type="text/css">
+
+    .navbar-default {
+        background-color: #fff;
+        border-color: #e7e7e7;
+    }
+
+    @media (min-width:760px)  {
+        .container-fluid {
+            padding-left: 5em;
+            padding-right: 5em;
+        }
+    }
+
+    .nav-link {
+        font-size: 1.6rem;
+    }
+
+    .navbar-brand {
+        color:#178fe6;
+        font-weight: bold;
+    }
+
+</style>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">移动端菜单导航</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!--{{#if @blog.logo}}-->
+                <!--<img class="nav-logo" alt="{{@blog.title}}" src="{{@blog.logo}}">-->
+            <!--{{/if}}-->
+            <a class="navbar-brand" href="{{@blog.url}}">
+                {{@blog.title}}
+            </a>
+        </div>
+
+        <div class="collapse navbar-collapse navbar-right" id="navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                {{#foreach navigation}}
+                    <li class="nav-link{{#if current}} active{{/if}}" role="presentation">
+                        <a href="{{url absolute="true"}}">{{label}}</a>
+                    </li>
+                {{/foreach}}
+            </ul>
+        </div>
+    </div>
+</nav>
+
+

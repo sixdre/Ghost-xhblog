@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    {{! Document Settings }}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    {{! Page Meta }}
+    <title>{{meta_title}}</title>
+    <meta name="description" content="{{meta_description}}" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
+
+    <link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css" href="{{asset "plugin/font-awesome/css/font-awesome.min.css"}}">
+
+    <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
+    {{! Styles'n'Scripts }}
+
+
+    <style type="text/css">
+
+        @media (min-width:760px) {
+            .main-content {
+                width: 90%;
+                margin: 0px auto;
+            }
+        }
+
+        .site-wrapper {
+            margin-top: 70px;
+        }
+
+        #scrollUp {
+            background-color: #777;
+            color: #eee;
+            font-size: 40px;
+            line-height: 1;
+            text-align: center;
+            text-decoration: none;
+            bottom: 50px;
+            right: 20px;
+            overflow: hidden;
+            width: 46px;
+            height: 46px;
+            border: none;
+            opacity: .8;
+        }
+
+    </style>
+
+    <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <script src="//cdn.bootcss.com/fitvids/1.1.0/jquery.fitvids.min.js"></script>
+    <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="//cdn.bootcss.com/scrollup/2.4.0/jquery.scrollUp.min.js"></script>
+    <script src="{{asset "js/index.js"}}"></script>
+
+    {{! Ghost outputs important style and meta data with this tag }}
+    {{ghost_head}}
+
+</head>
+
+<!--#E9EAEC-->
+<!--#EDECE4-->
+
+<body class="{{body_class}} nav-closed" style="background-color:#EDECE4;">
+
+{{navigation}}
+
+<div id="top" class="site-wrapper">
+
+    {{! Everything else gets inserted here }}
+    <div class="main-content">
+        {{{body}}}
+    </div>
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}</section>
+        <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a> &amp; <a href="http://www.ghostchina.com">GhostChina</a> using modified <a href="http://git.oschina.net/didispace/Ghost-template-dodo">dodo</a> theme. </section>
+    </footer>
+
+</div>
+
+{{! Ghost outputs important scripts and data with this tag }}
+{{ghost_foot}}
+
+</body>
+</html>
