@@ -48,3 +48,4 @@ Temporary Items
 .project
 content/data
 npm-debug.log
+/config.js
