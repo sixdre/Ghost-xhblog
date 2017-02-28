@@ -13,26 +13,26 @@ config = {
     production: {
         url: 'http://my-ghost-blog.com',
         mail: {},
-        database: {
+        /*database: {
             client: 'mysql',
             connection: {
                 filename: path.join(__dirname, '/content/data/ghost.db')
             },
             debug: false
-        },
+        },*/
 
         // 配置MySQL 数据库
-        /*database: {
+        database: {
             client: 'mysql',
             connection: {
-                host     : 'host',
-                user     : 'user',
-                password : 'password',
-                database : 'database',
+                host     : '127.0.0.1',
+                user     : 'root',
+                password : 'admin',
+                database : 'ghost',
                 charset  : 'utf8'
             },
             debug: false
-        },*/
+        },
 
         server: {
             host: '127.0.0.1',
@@ -80,7 +80,7 @@ config = {
     },
 
     // ### Development **(default)**
-    development: {
+    development: {				//本地所用
         // The url to use when providing links to the site, E.g. in RSS and email.
         // Change this to your Ghost blog's published URL.
         url: 'http://localhost:2368',
@@ -103,10 +103,19 @@ config = {
         // #### Database
         // Ghost supports sqlite3 (default), MySQL & PostgreSQL
         database: {
-            client: 'sqlite3',
+           /* client: 'sqlite3',
             connection: {
                 filename: path.join(__dirname, '/content/data/ghost-dev.db')
             },
+            debug: false*/
+        	client: 'mysql',
+	        connection: {
+	              host     : '127.0.0.1',
+	              user     : 'root',
+	              password : 'admin',
+	              database : 'ghost',
+	              charset  : 'utf8'
+	        },
             debug: false
         },
         // #### Server
